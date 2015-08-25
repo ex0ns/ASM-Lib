@@ -1,17 +1,23 @@
-This is a very basic libC using NASM.
-I'm trying to write as many functions as I can.
+### NASM libC.
 
-In lib.c file you will find how to use each function (most of the examples come from the C doc).
+To become familiar with NASM, I decided to write some of the C library functions in assembly.
 
-How to compile :
-nasm -f elf lib.asm
-Warning : If you are using a 64bits OS, this may not works, if it is the case, compile the asm using 
-nasm -f elf64 lib.asm 
-This should work !
+The `lib.c` file shows how to use each function (most examples come from the C man pages).
 
-It will create a lib.o file which is required by the lib.c (or any applications other applications).
-Then compile your file with gcc :
+#### How to compile :
+
+```
+nasm -f elf lib.asm 
+nasm -f elf64 lib.asm  # For x86_64 
+```
+
+This command will create a `lib.o` file which is required by the `lib.c` (or any applications other applications that wishes to use this library).
+
+Then compile your file with `gcc` and run it :
+
+```
 gcc lib.c lib.o -o lib
+./lib
+``` 
 
-Thank you 
-Do not hesitate to contact me or visit ex0ns.me
+Enjoy
